@@ -10,7 +10,8 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 
-class RegisterViewModel( val database: UserDatabaseDao, application: Application) : AndroidViewModel(application){
+class RegisterViewModel(val database: UserDatabaseDao, application: Application) :
+    AndroidViewModel(application) {
 
     private var viewModelJob = Job()
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
@@ -25,17 +26,17 @@ class RegisterViewModel( val database: UserDatabaseDao, application: Application
         get() = _gotoLogin
 
     init {
-        Log.i("RegisterViewModel","ViewModelCreate")
+        Log.i("RegisterViewModel", "ViewModelCreate")
     }
 
-    fun clickButton(){
-//        Log.i("RegisterViewModel","username"+inputusername.value)
-//        Log.i("RegisterViewModel","password"+inputPassword.value)
-//        Log.i("RegisterViewModel","comfirmpassword "+inputConfirmPassword.value)
-//        Log.i("RegisterViewModel","email "+inputEmail.value)
-        if(checkMatchNotNull()) {}
-        else if(!checkMatchPassword()) {}
-        else {
+    fun clickButton() {
+        Log.i("RegisterViewModel","username "+inputusername.value)
+        Log.i("RegisterViewModel","password "+inputPassword.value)
+        Log.i("RegisterViewModel","comfirmpassword "+inputConfirmPassword.value)
+        Log.i("RegisterViewModel","email "+inputEmail.value)
+        if (checkMatchNotNull()) {
+        } else if (!checkMatchPassword()) {
+        } else {
             _gotoLogin.value = true
         }
     }
@@ -43,15 +44,13 @@ class RegisterViewModel( val database: UserDatabaseDao, application: Application
     private fun checkMatchNotNull() = (inputusername.value == null
             || inputPassword.value == null
             || inputConfirmPassword == null
-            || inputEmail.value == null )
+            || inputEmail.value == null)
 
     private fun checkMatchPassword() = inputPassword.value == inputConfirmPassword.value
 
     override fun onCleared() {
-        Log.i("RegisterViewModel","ViewModelDestroy")
+        Log.i("RegisterViewModel", "ViewModelDestroy")
         super.onCleared()
         viewModelJob.cancel()
-
-
     }
 }

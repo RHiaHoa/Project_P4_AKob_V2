@@ -15,7 +15,6 @@ import com.example.application_v2.database.MyDatabase
 import com.example.application_v2.databinding.FragmentRegisterBinding
 
 
-
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
@@ -26,19 +25,21 @@ private const val ARG_PARAM2 = "param2"
  *
  */
 class RegisterFragment : Fragment() {
-    private lateinit var binding : FragmentRegisterBinding
+    private lateinit var binding: FragmentRegisterBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater,
-            R.layout.fragment_register, container, false)
+        binding = DataBindingUtil.inflate(
+            inflater,
+            R.layout.fragment_register, container, false
+        )
 
         val application = requireNotNull(this.activity).application
         val dataSource = MyDatabase.getInstance(application).UserDatabaseDao
-        val viewmodelfactory = RegisterViewModelFactory(dataSource,application)
-        val viewModel = ViewModelProviders.of(this,viewmodelfactory)
+        val viewmodelfactory = RegisterViewModelFactory(dataSource, application)
+        val viewModel = ViewModelProviders.of(this, viewmodelfactory)
             .get(RegisterViewModel::class.java)
 
         binding.buttonCancel.setOnClickListener {
@@ -46,7 +47,7 @@ class RegisterFragment : Fragment() {
         }
 
         viewModel.gotoLogin.observe(this, Observer {
-            if(it){
+            if (it) {
                 findNavController().navigate(
                     RegisterFragmentDirections
                         .actionRegisterFragmentToLoginFragment()

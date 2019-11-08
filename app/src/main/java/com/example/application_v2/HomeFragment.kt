@@ -29,9 +29,8 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
 
-        binding.buttonEdit.setOnClickListener {
-            it.findNavController().navigate(R.id.action_homeFragment_to_addGymFragment)
-        }
+        val adapter = HomeAdapter()
+        binding.recycleList.adapter = adapter
 
 
         setHasOptionsMenu(true)
@@ -42,7 +41,7 @@ class HomeFragment : Fragment() {
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
-        inflater?.inflate(R.menu.options_menu, menu)
+        inflater?.inflate(R.menu.home_menu, menu)
     }
 
 

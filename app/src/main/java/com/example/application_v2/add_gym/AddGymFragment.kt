@@ -1,4 +1,4 @@
-package com.example.application_v2
+package com.example.application_v2.add_gym
 
 
 import android.os.Bundle
@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import com.example.application_v2.R
 import com.example.application_v2.databinding.FragmentAddGymBinding
 
 
@@ -27,7 +28,8 @@ class AddGymFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        val binding: FragmentAddGymBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_add_gym, container, false)
+        val binding: FragmentAddGymBinding = DataBindingUtil.inflate(inflater,
+            R.layout.fragment_add_gym, container, false)
 
         binding.buttonCancel.setOnClickListener {
             it.findNavController().navigate(R.id.action_addGymFragment_to_homeFragment)
