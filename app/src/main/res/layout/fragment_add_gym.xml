@@ -1,109 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-    <!-- TODO: Update blank fragment layout -->
-    <layout
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools"
-            xmlns:app="http://schemas.android.com/apk/res-auto">
+<!-- TODO: Update blank fragment layout -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+    <data>
+        <variable
+                name="addGymViewModel"
+                type="com.example.application_v2.addGym.AddGymViewModel" />
+    </data>
 
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
 
-                <TextView
-                        android:id="@+id/text_gym"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="80dp"
-                        android:layout_marginEnd="8dp"
-                        android:text="@string/logoGym"
-                        android:textSize="42sp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.498"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-                <Button
-                        android:id="@+id/button_confrim"
-                        android:layout_width="137dp"
-                        android:layout_height="53dp"
-                        android:layout_marginTop="16dp"
-                        android:text="@string/ConfrimBtn"
-                        app:layout_constraintStart_toStartOf="@+id/input_type"
-                        app:layout_constraintTop_toBottomOf="@+id/input_type" />
+        <TextView
+                android:id="@+id/text_gym"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="80dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/logoGym"
+                android:textSize="42sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-                <Button
-                        android:id="@+id/button_cancel"
-                        android:layout_width="137dp"
-                        android:layout_height="53dp"
-                        android:layout_marginTop="16dp"
-                        android:text="@string/CancelBtn"
-                        app:layout_constraintEnd_toEndOf="@+id/input_type"
-                        app:layout_constraintTop_toBottomOf="@+id/input_type" />
+        <Button
+                android:id="@+id/button_confrim"
+                android:layout_width="137dp"
+                android:layout_height="53dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/ConfrimBtn"
+                android:onClick="@{() -> addGymViewModel.clickButton()}"
+                app:layout_constraintStart_toStartOf="@+id/input_type"
+                app:layout_constraintTop_toBottomOf="@+id/input_type" />
 
-                <EditText
-                        android:id="@+id/input_name_gym"
-                        android:layout_width="324dp"
-                        android:layout_height="58dp"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginEnd="8dp"
-                        android:ems="10"
-                        android:hint="@string/nameGymInput"
-                        android:inputType="textPersonName"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.492"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/text_gym" />
+        <Button
+                android:id="@+id/button_cancel"
+                android:layout_width="137dp"
+                android:layout_height="53dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/CancelBtn"
+                app:layout_constraintEnd_toEndOf="@+id/input_type"
+                app:layout_constraintTop_toBottomOf="@+id/input_type" />
 
-                <EditText
-                        android:id="@+id/input_address"
-                        android:layout_width="324dp"
-                        android:layout_height="58dp"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginEnd="8dp"
-                        android:ems="10"
-                        android:hint="@string/addressInput"
-                        android:inputType="textPersonName"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.492"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/input_name_gym" />
+        <EditText
+                android:id="@+id/input_name_gym"
+                android:layout_width="324dp"
+                android:layout_height="58dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:ems="10"
+                android:hint="@string/nameGymInput"
+                android:text="@={addGymViewModel.inputnameGym}"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.492"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_gym" />
 
-                <EditText
-                        android:id="@+id/input_time"
-                        android:layout_width="324dp"
-                        android:layout_height="58dp"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginEnd="8dp"
-                        android:ems="10"
-                        android:hint="@string/timeInput"
-                        android:inputType="textPersonName"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.492"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/input_address" />
+        <EditText
+                android:id="@+id/input_address"
+                android:layout_width="324dp"
+                android:layout_height="58dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:ems="10"
+                android:hint="@string/addressInput"
+                android:inputType="textPersonName"
+                android:text="@={addGymViewModel.inputaddress}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.492"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/input_name_gym" />
 
-                <EditText
-                        android:id="@+id/input_type"
-                        android:layout_width="324dp"
-                        android:layout_height="58dp"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginEnd="8dp"
-                        android:ems="10"
-                        android:hint="@string/typeInput"
-                        android:inputType="textPersonName"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.492"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/input_time" />
+        <EditText
+                android:id="@+id/input_time"
+                android:layout_width="324dp"
+                android:layout_height="58dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:ems="10"
+                android:hint="@string/timeInput"
+                android:text="@={addGymViewModel.inputtime}"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.492"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/input_address" />
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+        <EditText
+                android:id="@+id/input_type"
+                android:layout_width="324dp"
+                android:layout_height="58dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:ems="10"
+                android:hint="@string/typeInput"
+                android:text="@={addGymViewModel.inputtype}"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.492"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/input_time" />
 
-    </layout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
 

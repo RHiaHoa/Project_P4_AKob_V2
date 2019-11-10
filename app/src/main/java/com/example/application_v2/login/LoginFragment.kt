@@ -42,6 +42,8 @@ class LoginFragment : Fragment() {
         val viewModel = ViewModelProviders.of(this,viewmodelfactory).get(LoginViewModel::class.java)
 
 
+
+
         binding.buttonRegister.setOnClickListener {
             it.findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
         }
@@ -56,8 +58,22 @@ class LoginFragment : Fragment() {
 
         viewModel.showToast.observe(this, Observer {
             if (it) {
-                Toast.makeText(context,"Please input correct informations", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context,"Please input correct informations.", Toast.LENGTH_SHORT).show()
                 viewModel._showToast.value = false
+            }
+        })
+
+        viewModel.showToastHaveUser.observe(this, Observer {
+            if (it) {
+                Toast.makeText(context,"There are no users in the system.", Toast.LENGTH_SHORT).show()
+                viewModel._showToastHaveUser.value = false
+            }
+        })
+
+        viewModel.showToastCheckPassword.observe(this, Observer {
+            if (it) {
+                Toast.makeText(context,"Please check your password.", Toast.LENGTH_SHORT).show()
+                viewModel._showToastCheckPassword.value = false
             }
         })
 

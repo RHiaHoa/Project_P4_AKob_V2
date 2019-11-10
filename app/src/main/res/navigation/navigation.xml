@@ -11,7 +11,7 @@
         <action android:id="@+id/action_loginFragment_to_registerFragment" app:destination="@id/registerFragment"/>
     </fragment>
 
-    <fragment android:id="@+id/homeFragment" android:name="com.example.application_v2.HomeFragment"
+    <fragment android:id="@+id/homeFragment" android:name="com.example.application_v2.home.HomeFragment"
               tools:layout="@layout/fragment_home" android:label="HomeFragment">
         <action
                 android:id="@+id/action_homeFragment_to_addGymFragment"

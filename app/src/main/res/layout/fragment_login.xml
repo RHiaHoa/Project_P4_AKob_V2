@@ -76,6 +76,7 @@
                 android:ems="10"
                 android:hint="@string/passwordInput"
                 android:inputType="textPersonName"
+                android:password="true"
                 android:text="@={loginViewModel.inputPassword}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

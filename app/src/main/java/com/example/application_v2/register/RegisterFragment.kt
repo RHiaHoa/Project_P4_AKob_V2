@@ -58,15 +58,23 @@ class RegisterFragment : Fragment() {
 
         viewModel.showToast.observe(this, Observer {
             if (it) {
-                Toast.makeText(context,"Please input correct informations.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Please input correct informations.", Toast.LENGTH_SHORT)
+                    .show()
                 viewModel._showToast.value = false
             }
         })
 
         viewModel.showToastPassword.observe(this, Observer {
-            if (it){
-                Toast.makeText(context, "Please check your password." , Toast.LENGTH_LONG).show()
+            if (it) {
+                Toast.makeText(context, "Please check your password.", Toast.LENGTH_LONG).show()
                 viewModel._showToastPassword.value = false
+            }
+        })
+
+        viewModel.showToastHaveUser.observe(this, Observer {
+            if (it) {
+                Toast.makeText(context, "There is a user in the system.", Toast.LENGTH_LONG).show()
+                viewModel._showToastHaveUser.value = false
             }
         })
 
