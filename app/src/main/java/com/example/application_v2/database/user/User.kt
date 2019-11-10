@@ -1,4 +1,4 @@
-package com.example.application_v2.database
+package com.example.application_v2.database.user
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -9,11 +9,11 @@ data class User(
     var userId: Int = 0 ,
 
     @ColumnInfo(name = "username")
-    var username : String = "",
+    var username : String?,
 
     @ColumnInfo(name = "password")
-    var password : String = "",
+    var password : String?,
 
     @ColumnInfo(name = "email")
-    var email : String = ""
+    var email : String?
 )

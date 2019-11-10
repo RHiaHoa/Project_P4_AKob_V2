@@ -37,7 +37,7 @@ class LoginFragment : Fragment() {
         )
 
         val application = requireNotNull(this.activity).application
-        val dataSource = MyDatabase.getInstance(application).UserDatabaseDao
+        val dataSource = MyDatabase.getInstance(application).userDao
         val viewmodelfactory = LoginViewModelFactory(dataSource, application)
         val viewModel = ViewModelProviders.of(this,viewmodelfactory).get(LoginViewModel::class.java)
 
@@ -72,13 +72,13 @@ class LoginFragment : Fragment() {
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
-        inflater?.inflate(R.menu.options_menu, menu)
+        inflater.inflate(R.menu.options_menu, menu)
     }
 
 
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return NavigationUI.onNavDestinationSelected(item!!,
+        return NavigationUI.onNavDestinationSelected(item,
             view!!.findNavController())
                 || super.onOptionsItemSelected(item)
     }

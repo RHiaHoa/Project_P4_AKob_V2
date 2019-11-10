@@ -24,7 +24,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="80dp"
                 android:layout_marginEnd="8dp"
-                android:text="SANO"
+                android:text="@string/logoLogin"
                 android:textSize="42sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.498"
@@ -36,29 +36,29 @@
                 android:layout_width="137dp"
                 android:layout_height="53dp"
                 android:layout_marginTop="16dp"
-                android:text="login"
                 android:onClick="@{() -> loginViewModel.clickButton()}"
-                app:layout_constraintStart_toStartOf="@+id/input_type"
-                app:layout_constraintTop_toBottomOf="@+id/input_type" />
+                android:text="@string/loginBtn"
+                app:layout_constraintStart_toStartOf="@+id/input_password"
+                app:layout_constraintTop_toBottomOf="@+id/input_password" />
 
         <Button
                 android:id="@+id/button_register"
                 android:layout_width="137dp"
                 android:layout_height="53dp"
                 android:layout_marginTop="16dp"
-                android:text="register"
-                app:layout_constraintEnd_toEndOf="@+id/input_type"
-                app:layout_constraintTop_toBottomOf="@+id/input_type" />
+                android:text="@string/RegisterBtn"
+                app:layout_constraintEnd_toEndOf="@+id/input_password"
+                app:layout_constraintTop_toBottomOf="@+id/input_password" />
 
         <EditText
-                android:id="@+id/input_add_gym"
+                android:id="@+id/input_username"
                 android:layout_width="324dp"
                 android:layout_height="58dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
                 android:ems="10"
-                android:hint="Username"
+                android:hint="@string/usernameInput"
                 android:inputType="textPersonName"
                 android:text="@={loginViewModel.inputusername}"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -67,19 +67,19 @@
                 app:layout_constraintTop_toBottomOf="@+id/text_gym" />
 
         <EditText
-                android:id="@+id/input_type"
+                android:id="@+id/input_password"
                 android:layout_width="324dp"
                 android:layout_height="58dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
                 android:ems="10"
-                android:hint="Password"
+                android:hint="@string/passwordInput"
                 android:inputType="textPersonName"
                 android:text="@={loginViewModel.inputPassword}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/input_add_gym" />
+                app:layout_constraintTop_toBottomOf="@+id/input_username" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

@@ -4,15 +4,18 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.example.application_v2.database.gym.Gym
+import com.example.application_v2.database.gym.GymDatabaseDao
+import com.example.application_v2.database.user.User
+import com.example.application_v2.database.user.UserDatabaseDao
 
-@Database(entities = [User::class], version = 1, exportSchema = false)
-abstract class MyDatabase : RoomDatabase() {
+@Database(entities = [User::class, Gym::class],version = 1,exportSchema = false)
+abstract class MyDatabase : RoomDatabase(){
 
-    abstract val UserDatabaseDao: UserDatabaseDao
-//    abstract val GymDatabaseDao: GymDatabaseDao
+    abstract val userDao: UserDatabaseDao
+    abstract val gymDao: GymDatabaseDao
 
     companion object {
-
         @Volatile
         private var INSTANCE: MyDatabase? = null
 
@@ -24,17 +27,14 @@ abstract class MyDatabase : RoomDatabase() {
                     instance = Room.databaseBuilder(
                         context.applicationContext,
                         MyDatabase::class.java,
-                        "myDatabase"
+                        "myDB"
                     )
                         .fallbackToDestructiveMigration()
                         .build()
                     INSTANCE = instance
                 }
-
                 return instance
             }
         }
     }
-
-
 }

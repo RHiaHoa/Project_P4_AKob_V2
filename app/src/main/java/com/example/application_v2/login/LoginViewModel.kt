@@ -2,11 +2,10 @@ package com.example.application_v2.login
 
 import android.app.Application
 import android.util.Log
-import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.application_v2.database.UserDatabaseDao
+import com.example.application_v2.database.user.UserDatabaseDao
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

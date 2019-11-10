@@ -26,7 +26,7 @@
     <fragment android:id="@+id/aboutFragment" android:name="com.example.application_v2.AboutFragment"
               tools:layout="@layout/fragment_about" android:label="AboutFragment"/>
 
-    <fragment android:id="@+id/addGymFragment" android:name="com.example.application_v2.add_gym.AddGymFragment"
+    <fragment android:id="@+id/addGymFragment" android:name="com.example.application_v2.addGym.AddGymFragment"
               tools:layout="@layout/fragment_add_gym" android:label="AddGymFragment">
         <action android:id="@+id/action_addGymFragment_to_homeFragment" app:destination="@id/homeFragment"/>
     </fragment>

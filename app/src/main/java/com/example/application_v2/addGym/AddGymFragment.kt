@@ -1,4 +1,4 @@
-package com.example.application_v2.add_gym
+package com.example.application_v2.addGym
 
 
 import android.os.Bundle

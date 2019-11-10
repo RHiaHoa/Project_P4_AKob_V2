@@ -3,7 +3,7 @@ package com.example.application_v2.register
 import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.application_v2.database.UserDatabaseDao
+import com.example.application_v2.database.user.UserDatabaseDao
 
 class RegisterViewModelFactory(
     private val dataSource: UserDatabaseDao,

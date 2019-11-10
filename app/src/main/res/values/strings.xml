@@ -8,4 +8,30 @@
     <string name="share_success_text"> I am using Gym program </string>
 
     <string name="back_butoon">BACK</string>
+    <string name="loginBtn">Login</string>
+    <string name="RegisterBtn">Register</string>
+    <string name="ConfrimBtn">Confrim</string>
+    <string name="CancelBtn">Cancel</string>
+
+    <string name="logoLogin">SANO</string>
+    <string name="logoRegister">Register</string>
+    <string name="logoGym">GYM</string>
+
+    <string name="usernameInput">Username</string>
+    <string name="passwordInput">Password</string>
+    <string name="confrimPasswordInput">Comfrim Password</string>
+    <string name="emailInput">Email</string>
+    <string name="nameGymInput">Name Gym</string>
+    <string name="timeInput">Time</string>
+    <string name="typeInput">Type</string>
+    <string name="addressInput">Address</string>
+
+    <string name="University">Burapha University</string>
+    <string name="name">Mr.Burin Samphanwetsopha</string>
+    <string name="major">Information</string>
+    <string name="idCard">59160578</string>
+
+
+
+
 </resources>

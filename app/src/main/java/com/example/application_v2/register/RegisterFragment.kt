@@ -38,7 +38,7 @@ class RegisterFragment : Fragment() {
         )
 
         val application = requireNotNull(this.activity).application
-        val dataSource = MyDatabase.getInstance(application).UserDatabaseDao
+        val dataSource = MyDatabase.getInstance(application).userDao
         val viewmodelfactory = RegisterViewModelFactory(dataSource, application)
         val viewModel = ViewModelProviders.of(this, viewmodelfactory)
             .get(RegisterViewModel::class.java)
