@@ -3,5 +3,9 @@
 
     <item
             android:id="@+id/addGymFragment"
-            android:title="Add" />
+            android:title="Add Gym" />
+
+    <item
+            android:id="@+id/loginFragment"
+            android:title="Logout" />
 </menu>

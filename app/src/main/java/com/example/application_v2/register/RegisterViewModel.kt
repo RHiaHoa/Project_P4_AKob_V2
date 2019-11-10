@@ -25,6 +25,14 @@ class RegisterViewModel(val database: UserDatabaseDao, application: Application)
     val gotoLogin: LiveData<Boolean>
         get() = _gotoLogin
 
+    var _showToast = MutableLiveData<Boolean>()
+    val showToast: LiveData<Boolean>
+        get() = _showToast
+
+    var _showToastPassword = MutableLiveData<Boolean>()
+    val showToastPassword: LiveData<Boolean>
+        get() = _showToastPassword
+
     init {
         Log.i("RegisterViewModel", "ViewModelCreate")
     }
@@ -35,7 +43,9 @@ class RegisterViewModel(val database: UserDatabaseDao, application: Application)
         Log.i("RegisterViewModel","comfirmpassword "+inputConfirmPassword.value)
         Log.i("RegisterViewModel","email "+inputEmail.value)
         if (checkMatchNotNull()) {
+            _showToast.value = true
         } else if (!checkMatchPassword()) {
+            _showToastPassword.value = true
         } else {
             _gotoLogin.value = true
         }

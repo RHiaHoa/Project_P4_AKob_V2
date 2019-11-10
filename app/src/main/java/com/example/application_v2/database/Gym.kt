@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "gym")
 class Gym(
 //    @PrimaryKey(autoGenerate = true)
-//    var gymId: Int =8/ 0 ,
+//    var gymId: Int =0 ,
 //
 //    @ColumnInfo(name = "name_gym")
 //    var name_gym : String = "",
@@ -20,7 +20,6 @@ class Gym(
 //
 //    @ColumnInfo(name = "type")
 //    var type : String = ""
-
 )
 
 

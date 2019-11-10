@@ -42,6 +42,9 @@ class LoginFragment : Fragment() {
         val viewModel = ViewModelProviders.of(this,viewmodelfactory).get(LoginViewModel::class.java)
 
 
+        binding.buttonRegister.setOnClickListener {
+            it.findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
+        }
 
         viewModel.gotoHome.observe(this, Observer {
             if (it) {
@@ -57,6 +60,8 @@ class LoginFragment : Fragment() {
                 viewModel._showToast.value = false
             }
         })
+
+
         setHasOptionsMenu(true)
 
 

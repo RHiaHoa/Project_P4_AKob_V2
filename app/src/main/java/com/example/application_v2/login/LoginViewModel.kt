@@ -28,6 +28,7 @@ class LoginViewModel(val database: UserDatabaseDao, application: Application) :
     val showToast: LiveData<Boolean>
         get() = _showToast
 
+
     init {
         Log.i("LoginViewModel", "ViewModelCreate")
         _showToast.value = false

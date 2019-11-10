@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -52,6 +53,20 @@ class RegisterFragment : Fragment() {
                     RegisterFragmentDirections
                         .actionRegisterFragmentToLoginFragment()
                 )
+            }
+        })
+
+        viewModel.showToast.observe(this, Observer {
+            if (it) {
+                Toast.makeText(context,"Please input correct informations.", Toast.LENGTH_SHORT).show()
+                viewModel._showToast.value = false
+            }
+        })
+
+        viewModel.showToastPassword.observe(this, Observer {
+            if (it){
+                Toast.makeText(context, "Please check your password." , Toast.LENGTH_LONG).show()
+                viewModel._showToastPassword.value = false
             }
         })
 

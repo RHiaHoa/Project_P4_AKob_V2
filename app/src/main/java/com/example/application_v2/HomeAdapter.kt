@@ -1,7 +1,6 @@
 package com.example.application_v2
 
 import android.graphics.Color
-import android.util.Log
 import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -16,16 +15,40 @@ class HomeAdapter: RecyclerView.Adapter<TextItemViewHolder>() {
 //            notifyDataSetChanged()
 //        }
 
-    var dataName = listOf("สมพรการค้า","ฟิตเนส","อุปกรณ์กีฬา","สนามบอล","สนามแบต")
-    var dataScore = listOf("ลุมพินี ซอย 9","ลุมพินี ซอย 10","ลุมพินี ซอย 2","ลุมพินี ซอย 3","ลุมพินี ซอย 4")
+    var dataName_Gym = listOf("Fitness7 Pattaya",
+        "W/common Studio",
+        "Tony Fitness",
+        "PRS Gym",
+        "Refresh fitness")
 
-    override fun getItemCount() = dataName.size
+    var dataAddress = listOf("399/9 หมู่ที่ 10 ศูนย์การค้าพัทยา อเวนิว Pattayasaisong Rd, Bang Lamung District, Chon Buri 20150",
+        "Pattaya City, Bang Lamung District, Chon Buri 20150",
+        "27/7 Phatthaya Tai 24 Alley, Pattaya City, Bang Lamung District, Chon Buri 20150",
+        "City, Bang Lamung District, Chon Buri 20150",
+        "162/35 ม Pattaya City, Bang Lamung District, Chon Buri 20150")
+
+    var dataTime = listOf("10.00 - 22.00",
+        "Open 24 hours",
+        "Open 24 hours",
+        "10.00 - 22.00",
+        "10.00 - 22.00")
+
+    var dataType = listOf("Fitness",
+        "Fitness",
+        "Fitness",
+        "Fitness",
+        "Fitness")
+
+    override fun getItemCount() = dataName_Gym.size
 
     override fun onBindViewHolder(holder: TextItemViewHolder, position: Int) {
 
         holder.textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 24F)
 
-        holder.textView.text = "${dataName[position]}\n${dataScore[position]}\n"
+        holder.textView.text = "Name : ${dataName_Gym[position]}\n" +
+                "Address : ${dataAddress[position]}\n" +
+                "Time : ${dataTime[position]}\n" +
+                "Type : ${dataType[position]}\n"
 
         holder.textView.setTextColor(Color.BLACK)
 
